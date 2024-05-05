@@ -1,10 +1,14 @@
+import { BrowserRouter } from "react-router-dom"
 import "../src/chat.scss"
 import { Register } from "./pages/Register"
 function App() {
 
   return (
     <>
-      <Register />
+      <BrowserRouter>
+        <Register />
+      </BrowserRouter>
+
     </>
   )
 }
