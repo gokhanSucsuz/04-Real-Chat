@@ -4,9 +4,10 @@
 	box-sizing: border-box;
 }
 
-$baseColor: rgb(47, 113, 129);
-$baseLightColor: rgb(75, 116, 126);
-$baseDarkColor: rgb(4, 80, 99);
+$baseColor: rgb(57, 136, 156);
+$baseLightColor: rgb(109, 170, 185);
+$baseDarkColor: rgb(5, 110, 136);
+$secondaryColor: rgb(53, 121, 138);
 
 .formContainer {
 	display: flex;
@@ -79,7 +80,7 @@ $baseDarkColor: rgb(4, 80, 99);
 
 .home {
 	height: 100vh;
-	background-color: $baseColor;
+	background-color: $baseLightColor;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -93,6 +94,39 @@ $baseDarkColor: rgb(4, 80, 99);
 		.sidebar {
 			flex: 1;
 			background-color: $baseDarkColor;
+			color: white;
+			.navbar {
+				display: flex;
+				background-color: $secondaryColor;
+				align-items: center;
+				height: 50px;
+				padding: 10px;
+				justify-content: space-between;
+				.logo {
+					font-weight: bolder;
+				}
+				.user {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					gap: 10px;
+					img {
+						width: 24px;
+						height: 24px;
+						border-radius: 50%;
+						background-color: white;
+						object-fit: cover;
+					}
+					button {
+						padding: 10px;
+						border-radius: 8px;
+						background-color: $baseDarkColor;
+						border: none;
+						color: white;
+						cursor: pointer;
+					}
+				}
+			}
 		}
 		.chat {
 			flex: 2;
