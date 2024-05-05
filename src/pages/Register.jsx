@@ -42,7 +42,6 @@ export const Register = () => {
                             email,
                             photoURL: downloadURL,
                         });
-                        console.log("kullanıcı oluşmuş olmalı")
 
                         //create empty user chats on firestore
                         await setDoc(doc(db, "userChats", res.user.uid), {});
