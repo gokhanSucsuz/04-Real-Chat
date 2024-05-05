@@ -4,10 +4,11 @@
 	box-sizing: border-box;
 }
 
-$baseColor: rgb(57, 136, 156);
-$baseLightColor: rgb(109, 170, 185);
-$baseDarkColor: rgb(5, 110, 136);
-$secondaryColor: rgb(53, 121, 138);
+$baseColor: #007a85;
+$secondaryColor: #009b9e;
+$midColor: #00b5b8;
+$light: #00d3d6;
+$baseLightColor: #00ebe7;
 
 .formContainer {
 	display: flex;
@@ -93,11 +94,12 @@ $secondaryColor: rgb(53, 121, 138);
 		overflow: hidden;
 		.sidebar {
 			flex: 1;
-			background-color: $baseDarkColor;
+			background-color: $secondaryColor;
 			color: white;
+			border: 1px solid $baseColor;
 			.navbar {
 				display: flex;
-				background-color: $secondaryColor;
+				background-color: $baseColor;
 				align-items: center;
 				height: 50px;
 				padding: 10px;
@@ -120,10 +122,56 @@ $secondaryColor: rgb(53, 121, 138);
 					button {
 						padding: 10px;
 						border-radius: 8px;
-						background-color: $baseDarkColor;
+						background-color: $secondaryColor;
 						border: none;
 						color: white;
 						cursor: pointer;
+					}
+				}
+			}
+			.search {
+				border-bottom: 1px solid $secondaryColor;
+				.searchForm {
+					input {
+						width: 100%;
+						padding: 10px;
+						background-color: $secondaryColor;
+						border: none;
+						&::placeholder {
+							color: white;
+						}
+					}
+				}
+			}
+			.userChat {
+				display: flex;
+				background-color: $secondaryColor;
+				align-items: center;
+				padding: 10px;
+				gap: 10px;
+				color: white;
+				cursor: pointer;
+				border-top: 1px solid $midColor;
+				border-bottom: 1px solid $midColor;
+				&:hover {
+					background-color: $baseColor;
+				}
+				img {
+					width: 50px;
+					height: 50px;
+					border-radius: 50%;
+					object-fit: cover;
+					margin: 10px;
+				}
+				.userChatInfo {
+					span {
+						font-weight: bolder;
+						font-size: 18px;
+					}
+					p {
+						font-weight: normal;
+						font-size: 14px;
+						padding-top: 10px;
 					}
 				}
 			}
