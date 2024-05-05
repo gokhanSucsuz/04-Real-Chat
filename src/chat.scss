@@ -5,6 +5,8 @@
 }
 
 $baseColor: rgb(47, 113, 129);
+$baseLightColor: rgb(75, 116, 126);
+$baseDarkColor: rgb(4, 80, 99);
 
 .formContainer {
 	display: flex;
@@ -71,6 +73,29 @@ $baseColor: rgb(47, 113, 129);
 			font-size: 12px;
 			color: $baseColor;
 			margin-top: 10px;
+		}
+	}
+}
+
+.home {
+	height: 100vh;
+	background-color: $baseColor;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.container {
+		border: 1px solid white;
+		border-radius: 10px;
+		width: 65%;
+		height: 80%;
+		display: flex;
+		overflow: hidden;
+		.sidebar {
+			flex: 1;
+			background-color: $baseDarkColor;
+		}
+		.chat {
+			flex: 2;
 		}
 	}
 }
