@@ -178,6 +178,133 @@ $baseLightColor: #00ebe7;
 		}
 		.chat {
 			flex: 2;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			.chatInfo {
+				display: flex;
+				padding: 10px;
+				height: 50px;
+				justify-content: space-between;
+				background-color: $secondaryColor;
+				color: lightgray;
+				.chatIcons {
+					display: flex;
+					gap: 10px;
+
+					.icon {
+						cursor: pointer;
+					}
+				}
+			}
+			.messages {
+				background-color: $light;
+				padding: 10px;
+				height: calc(100% - 100px);
+				overflow-y: scroll;
+
+				&::-webkit-scrollbar {
+					height: 12px;
+					width: 12px;
+					background: $baseColor;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background: $midColor;
+					-webkit-box-shadow: 0px 1px 2px $baseLightColor;
+				}
+
+				&::-webkit-scrollbar-corner {
+					background: $baseColor;
+				}
+
+				.message {
+					display: flex;
+					gap: 20px;
+					margin-bottom: 20px;
+
+					.messageInfo {
+						display: flex;
+						flex-direction: column;
+						color: rgb(110, 109, 109);
+						font-weight: 300;
+						img {
+							width: 40px;
+							height: 40px;
+							border-radius: 50%;
+							object-fit: cover;
+						}
+					}
+					.messageContent {
+						max-width: 80%;
+						display: flex;
+						flex-direction: column;
+						gap: 10px;
+						p {
+							background-color: white;
+							padding: 10px 20px;
+							border-top-left-radius: 50%;
+							border-radius: 0px 10px 10px;
+							max-width: max-content;
+						}
+						img {
+							width: 50%;
+						}
+					}
+					&.owner {
+						flex-direction: row-reverse;
+
+						.messageContent {
+							align-items: flex-end;
+						}
+						p {
+							background-color: $baseColor;
+							color: white;
+						}
+					}
+				}
+			}
+			.input {
+				height: 50px;
+				width: 100%;
+				border: none;
+				background-color: white;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				input {
+					width: 100%;
+					outline: none;
+					border: none;
+					font-size: 18px;
+					&::placeholder {
+						color: lightgray;
+					}
+				}
+				.send {
+					color: lightgray;
+					display: flex;
+					gap: 10px;
+					font-size: 24px;
+					align-items: center;
+					cursor: pointer;
+
+					label {
+						cursor: pointer;
+					}
+					button {
+						padding: 8px;
+						border: none;
+						color: white;
+						background-color: $secondaryColor;
+						border-radius: 10px;
+						cursor: pointer;
+					}
+				}
+			}
 		}
 	}
 }
