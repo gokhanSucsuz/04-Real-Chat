@@ -1,7 +1,9 @@
 
 
-export const Chats = () => {
+const Chats = () => {
     return (
         <div>Chats</div>
     )
 }
+
+export default Chats
