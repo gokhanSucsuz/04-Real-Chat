@@ -2,8 +2,10 @@
 
 export const Home = () => {
     return (
-        <>
-            Home
-        </>
+        <div className="home">
+            <div className="container">
+                <Sidebar
+            </div>
+        </div>
     )
 }
