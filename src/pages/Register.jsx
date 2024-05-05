@@ -1,9 +1,10 @@
+import { MdOutlineAddPhotoAlternate } from "react-icons/md"
 
 export const Register = () => {
     return (
         <div className="formContainer">
             <div className="formWrapper">
-                <div className="Logo">
+                <div className="logo">
                     Real Chat
                 </div>
                 <div className="title">Register</div>
@@ -11,7 +12,11 @@ export const Register = () => {
                     <input type="text" placeholder="display name" />
                     <input type="email" placeholder="email" />
                     <input type="password" placeholder="password" />
-                    <input type="file" />
+                    <input style={{ display: "none" }} type="file" id="file" />
+                    <label htmlFor="file">
+                        <MdOutlineAddPhotoAlternate className="imageIcon" />
+                        Add an avatar
+                    </label>
                 </form>
                 <button>
                     Sign Up
