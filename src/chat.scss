@@ -10,6 +10,24 @@ $midColor: #00b5b8;
 $light: #00d3d6;
 $baseLightColor: #00ebe7;
 
+@mixin mobile {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+
 .formContainer {
 	display: flex;
 	justify-content: center;
@@ -92,11 +110,17 @@ $baseLightColor: #00ebe7;
 		height: 80%;
 		display: flex;
 		overflow: hidden;
+		@include tablet {
+			width: 90%;
+		}
 		.sidebar {
 			flex: 1;
 			background-color: $secondaryColor;
 			color: white;
 			border: 1px solid $baseColor;
+			@include tablet {
+				position: relative;
+			}
 			.navbar {
 				display: flex;
 				background-color: $baseColor;
@@ -106,12 +130,16 @@ $baseLightColor: #00ebe7;
 				justify-content: space-between;
 				.logo {
 					font-weight: bolder;
+					@include tablet {
+						display: none;
+					}
 				}
 				.user {
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
 					gap: 10px;
+
 					img {
 						width: 24px;
 						height: 24px;
@@ -126,6 +154,11 @@ $baseLightColor: #00ebe7;
 						border: none;
 						color: white;
 						cursor: pointer;
+						@include tablet {
+							position: absolute;
+							bottom: 10px;
+							background-color: #007a85;
+						}
 					}
 				}
 			}
