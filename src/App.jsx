@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import "../src/chat.scss"
 import { Register } from "./pages/Register"

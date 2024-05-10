@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 
 import { useNavigate, Link } from "react-router-dom";
@@ -36,7 +36,7 @@ export const Login = () => {
                     {err && <span>Something went wrong</span>}
                 </form>
                 <p>
-                    You don't have any account? <Link to="/register">Register</Link>
+                    You do not have any account? <Link to="/register">Register</Link>
                 </p>
             </div>
         </div>
