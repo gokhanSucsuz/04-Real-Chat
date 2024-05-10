@@ -6,7 +6,6 @@ import { AuthContext } from "../context/AuthContext"
 
 const Navbar = () => {
     const { currentUser } = useContext(AuthContext)
-    console.log(currentUser.photoURL)
     return (
         <div className="navbar">
             <div className="logo">
