@@ -1,21 +1,44 @@
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+
+import { useNavigate, Link } from "react-router-dom";
+import { auth } from "../firebase";
 
 export const Login = () => {
+    const [err, setErr] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        setLoading(true);
+        e.preventDefault();
+        const email = e.target[0].value;
+        const password = e.target[1].value;
+
+        try {
+            await signInWithEmailAndPassword(auth, email, password)
+            navigate("/")
+        } catch (err) {
+            setErr(true);
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="formContainer">
             <div className="formWrapper">
-                <div className="logo">
-                    Real Chat
-                </div>
-                <div className="title">Login</div>
-                <form>
-                    <input type="email" placeholder="email" />
-                    <input type="password" placeholder="password" />
+                <span className="logo">Lama Chat</span>
+                <span className="title">Login</span>
+                <form onSubmit={handleSubmit}>
+                    <input required type="email" placeholder="email" />
+                    <input required type="password" placeholder="password" />
+                    <button disabled={loading}>Login</button>
+                    {err && <span>Something went wrong</span>}
                 </form>
-                <button>
-                    Login
-                </button>
-                <p>You do not have an account? Register</p>
+                <p>
+                    You don't have any account? <Link to="/register">Register</Link>
+                </p>
             </div>
         </div>
-    )
-}
+    );
+};
