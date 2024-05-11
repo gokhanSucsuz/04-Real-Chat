@@ -4,11 +4,11 @@
 	box-sizing: border-box;
 }
 
-$baseColor: #007a85;
-$secondaryColor: #009b9e;
-$midColor: #00b5b8;
-$light: #00d3d6;
-$baseLightColor: #00ebe7;
+$baseColor: #164863;
+$secondaryColor: #427d9d;
+$midColor: #9bbec8;
+$light: #ddf2fd;
+$baseLightColor: #303c42;
 
 @mixin mobile {
 	@media screen and (max-width: 480px) {
