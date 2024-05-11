@@ -121,6 +121,7 @@ $baseLightColor: #303c42;
 			@include tablet {
 				position: relative;
 			}
+
 			.navbar {
 				display: flex;
 				background-color: $baseColor;
@@ -146,6 +147,9 @@ $baseLightColor: #303c42;
 						border-radius: 50%;
 						background-color: white;
 						object-fit: cover;
+						@include mobile {
+							display: none;
+						}
 					}
 					button {
 						padding: 10px;
@@ -210,6 +214,9 @@ $baseLightColor: #303c42;
 			}
 		}
 		.chat {
+			@include mobile {
+				flex: 4;
+			}
 			flex: 2;
 			display: flex;
 			flex-direction: column;
