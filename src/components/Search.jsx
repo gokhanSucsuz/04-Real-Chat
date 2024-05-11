@@ -1,5 +1,5 @@
-import { query, serverTimestamp } from "firebase/database"
-import { collection, doc, getDoc, getDocs, setDoc, updateDoc, where } from "firebase/firestore"
+import { query } from "firebase/database"
+import { collection, doc, getDoc, getDocs, setDoc, Timestamp, updateDoc, where } from "firebase/firestore"
 import { useContext, useState } from "react"
 import { db } from "../firebase"
 import { AuthContext } from "../context/AuthContext"
@@ -43,7 +43,7 @@ const Search = () => {
                         displayName: user.displayName,
                         photoURL: user.photoURL
                     },
-                    [`${combinedId}.date`]: serverTimestamp(),
+                    [`${combinedId}.date`]: Timestamp.now(),
                 })
                 await updateDoc(doc(db, "userChats", user.uid), {
                     [combinedId + ".userInfo"]: {
@@ -51,7 +51,7 @@ const Search = () => {
                         displayName: currentUser.displayName,
                         photoURL: currentUser.photoURL
                     },
-                    [`${combinedId}.date`]: serverTimestamp(),
+                    [`${combinedId}.date`]: Timestamp.now(),
                 })
             }
         } catch (error) {

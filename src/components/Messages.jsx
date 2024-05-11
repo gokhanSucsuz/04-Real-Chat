@@ -20,7 +20,7 @@ const Messages = () => {
     return (
         <div className="messages">
             {
-                messages.map((message, index) =>
+                messages?.map((message, index) =>
                     <Message key={index} message={message} />
                 )
             }
