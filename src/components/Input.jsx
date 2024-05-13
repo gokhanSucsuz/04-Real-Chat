@@ -93,7 +93,7 @@ const Input = () => {
                 <label htmlFor="file">
                     <FcAddImage />
                 </label>
-                <button onClick={handleSend}>Send</button>
+                <button type="submit" onClick={handleSend}>Send</button>
             </div>
         </div>
     )
