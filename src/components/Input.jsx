@@ -20,7 +20,7 @@ const Input = () => {
     const handleSend = async () => {
         if (img) {
             const storage = getStorage()
-            const storageRef = ref(storage, crypto.randomUUID())
+            const storageRef = ref(storage, window.crypto.randomUUID())
             const uploadTask = uploadBytesResumable(storageRef, img)
 
             uploadTask.on('state_changed',
@@ -45,7 +45,7 @@ const Input = () => {
                         console.log(downloadURL)
                         await updateDoc(doc(db, "chats", data.chatId), {
                             messages: arrayUnion({
-                                id: crypto.randomUUID(),
+                                id: window.crypto.randomUUID(),
                                 text,
                                 senderId: currentUser.uid,
                                 date: Timestamp.now(),
@@ -58,7 +58,7 @@ const Input = () => {
         } else {
             await updateDoc(doc(db, "chats", data.chatId), {
                 messages: arrayUnion({
-                    id: crypto.randomUUID(),
+                    id: window.crypto.randomUUID(),
                     text,
                     senderId: currentUser.uid,
                     date: Timestamp.now(),
